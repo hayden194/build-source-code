@@ -11,3 +11,17 @@ outputs:
 runs:
   using: 'node16'
   main: 'index.js'
+  
+  steps:
+    - uses: actions/checkout@v3
+      with:
+        path: ${{ steps.uppercase.outputs.uppercase_account }}
+    
+    - name: Build source code
+      id: build-source-code
+      run: |
+        cd ${{ steps.env.outputs.USER_WORK_SPACE_PATH }}
+        #modify maven package version
+        mvn versions:set -DnewVersion=${{ github.event.inputs.JAR_VERSION }} -s settings.xml
+        #maven package
+        mvn clean package -U -s settings.xml
