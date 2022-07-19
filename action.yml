@@ -11,6 +11,6 @@ outputs:
 runs:
 #   using: 'node16'
 #   main: 'index.js'
-  using: 'zx'
+  using: 'node16'
   main: 'build-source-code.mjs'
         
