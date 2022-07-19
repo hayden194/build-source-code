@@ -1,4 +1,4 @@
-// import 'zx/globals'
+import 'zx/globals'
 
 const core = require('@actions/core');
 const github = require('@actions/github');
@@ -12,7 +12,9 @@ try {
   const jar_version=core.getInput('JAR_VERSION');
   console.log(jar_version+"&&&&&&&&&&&");
   
-//   cd (user_work_space);
+  echo('invoke zx success');
+  cd (user_work_space);
+  pwd
 //   //modify maven package version
 //   const jar_version=core.getInput('JAR_VERSION');
 //   console.log(jar_version);
