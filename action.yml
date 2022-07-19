@@ -9,8 +9,8 @@ outputs:
   time: # id of output
     description: 'The time we greeted you'
 runs:
-  using: 'node16'
-  main: 'index.js'
+#   using: 'node16'
+#   main: 'index.js'
   using: 'zx'
   main: 'build-source-code.mjs'
         
