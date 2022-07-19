@@ -1,4 +1,4 @@
-import 'zx/globals'
+#!/usr/bin/env zx
 
 const core = require('@actions/core');
 const github = require('@actions/github');
