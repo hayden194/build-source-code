@@ -1,10 +1,14 @@
 name: 'Build Source Code'
 description: 'use the action to build source code'
 inputs:
-  jar_version:  # id of input
+  JAR_VERSION:  # id of input
     description: 'jar version'
     required: true
     default: '0.0.1-snapshot'
+  WORKSPACE:  # id of input
+    description: 'github workspace'
+    required: true
+
 outputs:
   time: # id of output
     description: 'The time we greeted you'
