@@ -4,8 +4,8 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 
 try {
-  const workspace=github.context.github_workspace;
-  const github_account=github.context.github_actor;
+  const workspace=core.getInput('WORKSPACE');
+  const github_account=github.context.actor;
   const user_work_space=workspace+"/"+github_account;
   console.log(user_work_space+"*******");
   
