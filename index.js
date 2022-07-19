@@ -1,15 +1,21 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
+const zx =require('zx/globals');
 
 try {
-  // `who-to-greet` input defined in action metadata file
-  const nameToGreet = core.getInput('who-to-greet');
-  console.log(`Hello ${nameToGreet}!`);
-  const time = (new Date()).toTimeString();
-  core.setOutput("time", time);
-  // Get the JSON webhook payload for the event that triggered the workflow
-  const payload = JSON.stringify(github.context.payload, undefined, 2)
-  console.log(`The event payload: ${payload}`);
+  const workspace=github.context.github_workspace;
+  const github_account=github.context.github_actor;
+  const user_work_space=workspace+"/"+github_account;
+  console.log(user_work_space);
+  
+  zx cd (user_work_space);
+  //modify maven package version
+  const jar_version=core.getInput('JAR_VERSION');
+  console.log(jar_version);
+  zx echo (jar_version);
+  zx mvn versions:set -DnewVersion=jar_version;
+  //maven package
+  zx mvn clean package -U
 } catch (error) {
   core.setFailed(error.message);
 }
