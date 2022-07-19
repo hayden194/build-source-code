@@ -9,6 +9,9 @@ try {
   const user_work_space=workspace+"/"+github_account;
   console.log(user_work_space+"*******");
   
+  const jar_version=core.getInput('JAR_VERSION');
+  console.log(jar_version+"&&&&&&&&&&&");
+  
 //   cd (user_work_space);
 //   //modify maven package version
 //   const jar_version=core.getInput('JAR_VERSION');
