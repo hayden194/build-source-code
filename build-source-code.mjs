@@ -7,6 +7,7 @@ try {
   const workspace=github.context.github_workspace;
   const github_account=github.context.github_actor;
   const user_work_space=workspace+"/"+github_account;
+  console.log(user_work_space);
   
   cd (user_work_space);
   //modify maven package version
