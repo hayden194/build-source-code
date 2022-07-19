@@ -11,6 +11,8 @@ try {
   cd (user_work_space);
   //modify maven package version
   const jar_version=core.getInput('JAR_VERSION');
+  console.log(jar_version);
+  echo (jar_version);
   mvn versions:set -DnewVersion=jar_version;
   //maven package
   mvn clean package -U
