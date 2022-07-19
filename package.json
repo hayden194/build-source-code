@@ -7,7 +7,7 @@
   "name": "build-source-code",
   "description": "build source code",
   "version": "1.0.0",
-  "main": "build-source-code.mjs",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
