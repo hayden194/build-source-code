@@ -1,5 +1,3 @@
-#!/usr/bin/env zx
-
 const core = require('@actions/core');
 const github = require('@actions/github');
 const zx =require('zx/globals');
